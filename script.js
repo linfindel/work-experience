@@ -273,45 +273,76 @@ map.on('click', function(e){
 });
 
 // Responsiveness stuff
-if (window.innerWidth < window.innerHeight) {
-  // Button
-  document.getElementById("action-button-row").style.width = "100%";
-  document.getElementById("settings-button").style.flex = "1";
+setInterval(() => {
+  if (window.innerWidth < window.innerHeight) {
+    // Button
+    document.getElementById("action-button-row").style.width = "100%";
+    document.getElementById("settings-button").style.flex = "1";
+  
+    // Map and image section
+    document.getElementById("map").style.width = "90vw";
+    document.getElementById("map").style.borderRadius = "24px";
+    document.getElementById("map").style.borderBottomLeftRadius = "7px";
+    document.getElementById("map").style.borderBottomRightRadius = "7px";
+  
+    document.getElementById("img").style.width = "90vw";
+    document.getElementById("img").style.borderRadius = "24px";
+    document.getElementById("img").style.borderTopLeftRadius = "7px";
+    document.getElementById("img").style.borderTopRightRadius = "7px";
+  
+    // Stats section
+    document.getElementById("verdict-card").style.width = "calc(90vw - 5rem)";
+  
+    document.getElementById("stats-row").style.flexDirection = "column";
+  
+    document.getElementById("temp-card").style.width = "calc(90vw - 5rem)";
+    document.getElementById("temp-card").style.borderRadius = "24px";
+    document.getElementById("temp-card").style.borderBottomLeftRadius = "7px";
+    document.getElementById("temp-card").style.borderBottomRightRadius = "7px";
+  
+    document.getElementById("humidity-card").style.width = "calc(90vw - 5rem)";
+    document.getElementById("humidity-card").style.borderRadius = "7px";
+  
+    document.getElementById("visibility-card").style.width = "calc(90vw - 5rem)";
+    document.getElementById("visibility-card").style.borderRadius = "7px";
+  
+    document.getElementById("uv-card").style.width = "calc(90vw - 5rem)";
+    document.getElementById("uv-card").style.borderRadius = "7px";
+  
+    document.getElementById("rain-card").style.width = "calc(90vw - 5rem)";
+    document.getElementById("rain-card").style.borderRadius = "24px";
+    document.getElementById("rain-card").style.borderTopLeftRadius = "7px";
+    document.getElementById("rain-card").style.borderTopRightRadius = "7px";
+  
+    document.getElementById("wind-card").style.width = "calc(90vw - 5rem)";
+  }
 
-  // Map and image section
-  document.getElementById("map").style.width = "90vw";
-  document.getElementById("map").style.borderRadius = "24px";
-  document.getElementById("map").style.borderBottomLeftRadius = "7px";
-  document.getElementById("map").style.borderBottomRightRadius = "7px";
-
-  document.getElementById("img").style.width = "90vw";
-  document.getElementById("img").style.borderRadius = "24px";
-  document.getElementById("img").style.borderTopLeftRadius = "7px";
-  document.getElementById("img").style.borderTopRightRadius = "7px";
-
-  // Stats section
-  document.getElementById("verdict-card").style.width = "calc(90vw - 5rem)";
-
-  document.getElementById("stats-row").style.flexDirection = "column";
-
-  document.getElementById("temp-card").style.width = "calc(90vw - 5rem)";
-  document.getElementById("temp-card").style.borderRadius = "24px";
-  document.getElementById("temp-card").style.borderBottomLeftRadius = "7px";
-  document.getElementById("temp-card").style.borderBottomRightRadius = "7px";
-
-  document.getElementById("humidity-card").style.width = "calc(90vw - 5rem)";
-  document.getElementById("humidity-card").style.borderRadius = "7px";
-
-  document.getElementById("visibility-card").style.width = "calc(90vw - 5rem)";
-  document.getElementById("visibility-card").style.borderRadius = "7px";
-
-  document.getElementById("uv-card").style.width = "calc(90vw - 5rem)";
-  document.getElementById("uv-card").style.borderRadius = "7px";
-
-  document.getElementById("rain-card").style.width = "calc(90vw - 5rem)";
-  document.getElementById("rain-card").style.borderRadius = "24px";
-  document.getElementById("rain-card").style.borderTopLeftRadius = "7px";
-  document.getElementById("rain-card").style.borderTopRightRadius = "7px";
-
-  document.getElementById("wind-card").style.width = "calc(90vw - 5rem)";
-}
+  else {
+    // Button
+    document.getElementById("action-button-row").style.width = "";
+    document.getElementById("settings-button").style.flex = "";
+  
+    // Map and image section
+    document.getElementById("map").style.width = "50vw";
+    document.getElementById("map").style.borderRadius = "24px";
+    document.getElementById("map").style.borderTopRightRadius = "7px";
+    document.getElementById("map").style.borderBottomRightRadius = "7px";
+  
+    document.getElementById("img").style.width = "";
+    document.getElementById("img").style.borderRadius = "24px";
+    document.getElementById("img").style.borderTopLeftRadius = "7px";
+    document.getElementById("img").style.borderBottomLeftRadius = "7px";
+  
+    // Stats section
+    document.getElementById("verdict-card").style.width = "";
+  
+    document.getElementById("stats-row").style.flexDirection = "row";
+  
+    document.getElementById("temp-card").style.width = "";
+    document.getElementById("humidity-card").style.width = "";
+    document.getElementById("visibility-card").style.width = "";
+    document.getElementById("uv-card").style.width = "";
+    document.getElementById("rain-card").style.width = "";
+    document.getElementById("wind-card").style.width = "";
+  }
+}, 100);

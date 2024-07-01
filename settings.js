@@ -33,31 +33,48 @@ fetch(`https://api.github.com/repos/${username}/${repo}/commits?per_page=1`)
 .catch(error => console.error('Error fetching data:', error));
 
 // Responsiveness stuff
-if (window.innerWidth < window.innerHeight) {
-  // Action button row
-  document.getElementById("action-button-row").style.width = "100%";
-  document.getElementById("back-button").style.flex = "1";
-  document.getElementById("reset-button").style.flex = "1";
+setInterval(() => {
+  if (window.innerWidth < window.innerHeight) {
+    // Action button row
+    document.getElementById("action-button-row").style.width = "100%";
+    document.getElementById("back-button").style.flex = "1";
+    document.getElementById("reset-button").style.flex = "1";
+  
+    // Watersports
+    document.getElementById("sport-button-row").style.flexDirection = "column";
+  
+    document.getElementById("boat").style.width = "calc(90vw - 5rem)";
+    document.getElementById("boat").style.borderRadius = "24px";
+    document.getElementById("boat").style.borderBottomLeftRadius = "7px";
+    document.getElementById("boat").style.borderBottomRightRadius = "7px";
+  
+    document.getElementById("jetski").style.width = "calc(90vw - 5rem)";
+    document.getElementById("jetski").style.borderRadius = "7px";
+  
+    document.getElementById("paddle").style.width = "calc(90vw - 5rem)";
+    document.getElementById("paddle").style.borderRadius = "7px";
+  
+    document.getElementById("surf").style.width = "calc(90vw - 5rem)";
+    document.getElementById("surf").style.borderRadius = "7px";
+  
+    document.getElementById("swim").style.width = "calc(90vw - 5rem)";
+    document.getElementById("swim").style.borderRadius = "24px";
+    document.getElementById("swim").style.borderTopLeftRadius = "7px";
+    document.getElementById("swim").style.borderTopRightRadius = "7px";
+  }
 
-  // Watersports
-  document.getElementById("sport-button-row").style.flexDirection = "column";
-
-  document.getElementById("boat").style.width = "calc(90vw - 5rem)";
-  document.getElementById("boat").style.borderRadius = "24px";
-  document.getElementById("boat").style.borderBottomLeftRadius = "7px";
-  document.getElementById("boat").style.borderBottomRightRadius = "7px";
-
-  document.getElementById("jetski").style.width = "calc(90vw - 5rem)";
-  document.getElementById("jetski").style.borderRadius = "7px";
-
-  document.getElementById("paddle").style.width = "calc(90vw - 5rem)";
-  document.getElementById("paddle").style.borderRadius = "7px";
-
-  document.getElementById("surf").style.width = "calc(90vw - 5rem)";
-  document.getElementById("surf").style.borderRadius = "7px";
-
-  document.getElementById("swim").style.width = "calc(90vw - 5rem)";
-  document.getElementById("swim").style.borderRadius = "24px";
-  document.getElementById("swim").style.borderTopLeftRadius = "7px";
-  document.getElementById("swim").style.borderTopRightRadius = "7px";
-}
+  else {
+    // Action button row
+    document.getElementById("action-button-row").style.width = "";
+    document.getElementById("back-button").style.flex = "";
+    document.getElementById("reset-button").style.flex = "";
+  
+    // Watersports
+    document.getElementById("sport-button-row").style.flexDirection = "row";
+    document.getElementById("boat").style.width = "";
+    document.getElementById("jetski").style.width = "";
+    document.getElementById("paddle").style.width = "";
+    document.getElementById("surf").style.width = "";
+    document.getElementById("swim").style.width = "";
+  }
+}, 100);
