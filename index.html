@@ -30,14 +30,14 @@
       filter: invert();
     }
 
-    .row-flat div {
+    #stats-row div {
       height: 7.5rem;
     }
   </style>
 </head>
 <body>
   <div class="navbar-column">
-    <nav style="background-image: url(plymouth.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <nav>
       <h1 id="title">Loading</h1>
     </nav>
 
@@ -49,14 +49,18 @@
     </div>
   </div>
 
-  <div id="map" style="border-radius: 24px; width: 50vw; height: 15rem;"></div>
+  <div class="row-flat">
+    <div id="map" style="border-radius: 24px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; width: 50vw; height: 15rem;"></div>
+
+    <img id="img" style="border-top-left-radius: 7px; border-bottom-left-radius: 7px; height: 15rem;">
+  </div>
 
   <div id="verdict-card" class="card-success row">
     <h1 id="verdict-icon" style="font-size: 5rem;" class="material-symbols-rounded">downloading</h1>
     <h1 id="verdict-text">Loading...</h1>
   </div>
 
-  <div class="row-flat">
+  <div class="row-flat" id="stats-row">
     <div class="card-flat-right text-center" id="temp-card">
       <h2 id="temp">Loading...</h2>
       <p id="temp-text">Temperature</p>
