@@ -59,7 +59,14 @@ function fetchData() {
         document.getElementById("verdict-card").classList.add("card-error");
         document.getElementById("verdict-card").classList.remove("card-success");
 
-        if (temperature > 30) {
+        if (temperature > 40) {
+          document.getElementById("verdict-icon").innerText = "emergency_heat";
+          document.getElementById("verdict-text").innerText = "It's too hot to be outside";
+
+          document.getElementById("temp-text").innerHTML += "<br> Stay indoors";
+        }
+        
+        else if (temperature > 30) {
           document.getElementById("verdict-icon").innerText = "emergency_heat";
           document.getElementById("verdict-text").innerText = "It's too hot to be on the water";
 
@@ -216,22 +223,19 @@ if (!localStorage.getItem("sport")) {
   document.getElementById("verdict-text").style.fontSize = "1.5rem";
 }
 
-
 var map = L.map("map").setView([53, -2], 5);
 
 L.tileLayer("http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png", {
   maxZoom: 17,
 }).addTo(map);
 
-map.on('click', function(e){
-  localStorage.setItem("latlong", e.latlng);
+// L.marker(localStorage.getItem("latlong")).addTo(map);
 
+map.on('click', function(e){
   let lat = Math.round(e.latlng.lat);
   let long = Math.round(e.latlng.lng);
 
   localStorage.setItem("api-url", `https://data.hub.api.metoffice.gov.uk/sitespecific/v0/point/hourly?latitude=${lat}&longitude=${long}`);
-
-  console.log(`https://data.hub.api.metoffice.gov.uk/sitespecific/v0/point/hourly?latitude=${lat}&longitude=-${long}`);
 
   location.reload();
 });
