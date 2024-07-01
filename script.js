@@ -152,7 +152,7 @@ function isSafe() {
       return "rain";
     }
   
-    else if ((windNormal < 13 || windGusts < 15) && (windNormal < 75 || windGusts < 90)) {
+    else if ((windNormal < 13 || windGusts < 15) && (windNormal > 75 || windGusts > 90)) {
       return "wind";
     }
   
