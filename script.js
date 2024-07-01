@@ -92,8 +92,8 @@ function fetchData() {
         document.getElementById("verdict-icon").innerText = "foggy";
         document.getElementById("verdict-text").innerText = "Visibility is too low to be on the water";
 
-        document.getElementById("temp-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
-        document.getElementById("temp-text").innerHTML += "<br> Keep the shore in sight";
+        document.getElementById("visibility-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+        document.getElementById("visibility-text").innerHTML += "<br> Keep the shore in sight";
       }
 
       else {
