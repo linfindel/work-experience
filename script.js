@@ -1,7 +1,7 @@
-const apiKey = "eyJ4NXQiOiJOak16WWpreVlUZGlZVGM0TUdSalpEaGtaV1psWWpjME5UTXhORFV4TlRZM1ptRTRZV1JrWWc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJuYXRoYW5oYWRsZXkucGlnZW9uQGdtYWlsLmNvbUBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6Im5hdGhhbmhhZGxleS5waWdlb25AZ21haWwuY29tIiwidGllclF1b3RhVHlwZSI6bnVsbCwidGllciI6IlVubGltaXRlZCIsIm5hbWUiOiJzaXRlX3NwZWNpZmljLTkxMzQ1MmFiLTZlNWMtNDlhYy05MTRiLTA0Y2EwYTE5YzM3MyIsImlkIjo1MDczLCJ1dWlkIjoiNDU3ZDg2ZTMtMjVmMC00NjJmLTg0ZjktNzM3YjZhZjhiZGJkIn0sImlzcyI6Imh0dHBzOlwvXC9hcGktbWFuYWdlci5hcGktbWFuYWdlbWVudC5tZXRvZmZpY2UuY2xvdWQ6NDQzXC9vYXV0aDJcL3Rva2VuIiwidGllckluZm8iOnsid2RoX3NpdGVfc3BlY2lmaWNfZnJlZSI6eyJ0aWVyUXVvdGFUeXBlIjoicmVxdWVzdENvdW50IiwiZ3JhcGhRTE1heENvbXBsZXhpdHkiOjAsImdyYXBoUUxNYXhEZXB0aCI6MCwic3RvcE9uUXVvdGFSZWFjaCI6dHJ1ZSwic3Bpa2VBcnJlc3RMaW1pdCI6MCwic3Bpa2VBcnJlc3RVbml0Ijoic2VjIn19LCJrZXl0eXBlIjoiUFJPRFVDVElPTiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6IlNpdGVTcGVjaWZpY0ZvcmVjYXN0IiwiY29udGV4dCI6Ilwvc2l0ZXNwZWNpZmljXC92MCIsInB1Ymxpc2hlciI6IkphZ3Vhcl9DSSIsInZlcnNpb24iOiJ2MCIsInN1YnNjcmlwdGlvblRpZXIiOiJ3ZGhfc2l0ZV9zcGVjaWZpY19mcmVlIn1dLCJ0b2tlbl90eXBlIjoiYXBpS2V5IiwiaWF0IjoxNzE5ODM2NTczLCJqdGkiOiI3ZDZhNmMzOS1hYjBhLTQzNGMtYTg2Ni1mZTVmZmM2MjU1MWQifQ==.RqTJn_yeW6ThaZk7oPCj38FMG8i3uQON-pxZj_ghjhsyF-fmjXdPwqNrkynyCZsL2IRctLxTWlbQKH4MDGCfk8KGKrfsEsBYJzvW7LUbynXAAeOHQ1dVuMD-raN3CZ6s1GtK4M3WvQStBqPiTFD7N0XqRp1hRZVVjvnuJ-7X86YTcERzLM5wy9tNej-GROzMxJ5iktwXnuWu3fXxe594D3P5ny3OYGP6a8SZ8oQ32n94kVmWQeKnIinPVyoNTIaqNVIM-p_ddHIccKQrr-55I6MGuWyel3r7Ssc8-sRo6Ht8fLFP8wVCzkjDy9wC-1AK8KvXrJOcWsXt9Ng8luty5w==";
+const apiKey = "eyJ4NXQiOiJOak16WWpreVlUZGlZVGM0TUdSalpEaGtaV1psWWpjME5UTXhORFV4TlRZM1ptRTRZV1JrWWc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJvZzM1MTUxM0BjYWxseXdpdGguYWMudWtAY2FyYm9uLnN1cGVyIiwiYXBwbGljYXRpb24iOnsib3duZXIiOiJvZzM1MTUxM0BjYWxseXdpdGguYWMudWsiLCJ0aWVyUXVvdGFUeXBlIjpudWxsLCJ0aWVyIjoiVW5saW1pdGVkIiwibmFtZSI6InNpdGVfc3BlY2lmaWMtMTdhYWI2MjMtOThmOS00MjNmLWEyNGQtYzE0MjQ0NzAzMmJmIiwiaWQiOjUwNzQsInV1aWQiOiI0MTAyNGY5YS00YzIxLTRlNzMtYTRlNC1iNmRkZjA1MDIwYzMifSwiaXNzIjoiaHR0cHM6XC9cL2FwaS1tYW5hZ2VyLmFwaS1tYW5hZ2VtZW50Lm1ldG9mZmljZS5jbG91ZDo0NDNcL29hdXRoMlwvdG9rZW4iLCJ0aWVySW5mbyI6eyJ3ZGhfc2l0ZV9zcGVjaWZpY19mcmVlIjp7InRpZXJRdW90YVR5cGUiOiJyZXF1ZXN0Q291bnQiLCJncmFwaFFMTWF4Q29tcGxleGl0eSI6MCwiZ3JhcGhRTE1heERlcHRoIjowLCJzdG9wT25RdW90YVJlYWNoIjp0cnVlLCJzcGlrZUFycmVzdExpbWl0IjowLCJzcGlrZUFycmVzdFVuaXQiOiJzZWMifX0sImtleXR5cGUiOiJQUk9EVUNUSU9OIiwic3Vic2NyaWJlZEFQSXMiOlt7InN1YnNjcmliZXJUZW5hbnREb21haW4iOiJjYXJib24uc3VwZXIiLCJuYW1lIjoiU2l0ZVNwZWNpZmljRm9yZWNhc3QiLCJjb250ZXh0IjoiXC9zaXRlc3BlY2lmaWNcL3YwIiwicHVibGlzaGVyIjoiSmFndWFyX0NJIiwidmVyc2lvbiI6InYwIiwic3Vic2NyaXB0aW9uVGllciI6IndkaF9zaXRlX3NwZWNpZmljX2ZyZWUifV0sInRva2VuX3R5cGUiOiJhcGlLZXkiLCJpYXQiOjE3MTk4MzY4OTIsImp0aSI6IjhlZGU5M2UzLTk0NjctNGVmMy1hZDc0LTcyMTY4OGQ2NGMxZSJ9.HE1yTSdKD0dVnVHKlhujFiBbf6cBj1DogI9xrINRiGlBP1oNtD1ueYKydXC6YzdJR_S_qKUs_OITbrH6ciOMs7HOzx3ZyKV2p1tY0UlRyoE1zUbu5-2ldClzvhXCveafLt7jY-lPTX4MqCUVUjWBTQkrkXxIixmEc-2TCn_YN7QsE7Mgtgc_Xb7N_uGSsKgCSL_ocU-LGzGbOts_LgZPpbIuu6Jo89GFuL-xQNnjs9T7yltG9PTSNJNY0IcxQ9m35K4IAiVBVDEP1if6S47OYPaRqP9AveEO15ZZM4HYaAHZk74siBq0vrbPIe2m5vE5h2Gc0dP-xiaS1BKA9p66MA==";
 const apiURL = "https://data.hub.api.metoffice.gov.uk/sitespecific/v0/point/hourly?latitude=50.371389&longitude=-4.142222";
 
-let temperature, humidity, visibility, uv, rain, windNormal, windGusts, windDirection;
+let temperature, humidity, visibility, uv, uvHigh, rain, windNormal, windGusts, windDirection;
 
 fetch(apiURL, {headers: {apikey: apiKey}})
 .then(response => response.json())
@@ -16,11 +16,28 @@ fetch(apiURL, {headers: {apikey: apiKey}})
 
     visibility /= 1000;
 
+    if (localStorage.getItem("sport") == "boat" || localStorage.getItem("sport") == "jetski" || localStorage.getItem("sport") == "surf") {
+      if (uv > 5) {
+        uvHigh = true
+      }
+    }
+
+    else if (localStorage.getItem("sport") == "paddle" || localStorage.getItem("sport") == "swim") {
+      if (uv > 4) {
+        uvHigh = true;
+      }
+    }
+
     document.getElementById("temp").innerText = `${temperature} °C`;
     document.getElementById("humidity").innerText = `${humidity}%`;
     document.getElementById("visibility").innerText = `${visibility} km`;
     document.getElementById("uv").innerText = `${uv}`;
     document.getElementById("rain").innerText = `${rain}%`;
+
+    if (uvHigh) {
+      document.getElementById("uv-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      document.getElementById("uv-text").innerHTML += "<br> Apply sun cream"
+    }
 
     windNormal = data.features[0].properties.timeSeries[0].windSpeed10m;
     windGusts = data.features[0].properties.timeSeries[0].windGustSpeed10m;
@@ -56,14 +73,6 @@ fetch(apiURL, {headers: {apikey: apiKey}})
 
       document.getElementById("verdict-icon").innerText = "air";
       document.getElementById("verdict-text").innerText = "It's too windy to be on the water";
-    }
-
-    else if (isSafe() == "uv") {
-      document.getElementById("verdict-card").classList.add("card-error");
-      document.getElementById("verdict-card").classList.remove("card-success");
-
-      document.getElementById("verdict-icon").innerText = "sunny";
-      document.getElementById("verdict-text").innerText = "Apply sun cream";
     }
 
     else if (isSafe() == "visibility") {
@@ -105,10 +114,6 @@ function isSafe() {
     else if (visibility < 20) {
       return "visibility";
     }
-
-    else if (uv > 5) {
-      return "uv";
-    }
   }
 
   else if (localStorage.getItem("sport") == "jetski") {  
@@ -122,10 +127,6 @@ function isSafe() {
   
     else if (visibility < 20) {
       return "visibility";
-    }
-
-    else if (uv > 5) {
-      return "uv";
     }
   }
 
@@ -141,10 +142,6 @@ function isSafe() {
     else if (visibility < 2) {
       return "visibility";
     }
-
-    else if (uv > 4) {
-      return "uv";
-    }
   }
 
   else if (localStorage.getItem("sport") == "surf") {  
@@ -159,10 +156,6 @@ function isSafe() {
     else if (visibility < 1) {
       return "visibility";
     }
-
-    else if (uv > 5) {
-      return "uv";
-    }
   }
 
   else if (localStorage.getItem("sport") == "swim") {  
@@ -176,10 +169,6 @@ function isSafe() {
   
     else if (visibility < 1) {
       return "visibility";
-    }
-
-    else if (uv > 4) {
-      return "uv";
     }
   }
 
