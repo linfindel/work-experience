@@ -10,8 +10,10 @@ function setSport(sport) {
   document.getElementById(sport).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
 }
 
-document.getElementById(localStorage.getItem("sport")).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
-
+if (localStorage.getItem("sport")) {
+  document.getElementById(localStorage.getItem("sport")).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
+}
+  
 const username = 'linfindel';
 const repo = 'work-experience';
 
