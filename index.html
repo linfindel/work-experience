@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+
+  <style>
+    .row-flat div {
+      height: 7.5rem;
+    }
+  </style>
 </head>
 <body>
   <div class="navbar-column">
@@ -30,19 +36,19 @@
   </div>
 
   <div class="row-flat">
-    <div class="card-flat-right text-center">
+    <div class="card-flat-right text-center" id="temp-card">
       <h2 id="temp">Loading...</h2>
-      <p>Temperature</p>
+      <p id="temp-text">Temperature</p>
     </div>
 
-    <div class="card-flat text-center">
+    <div class="card-flat text-center" id="humidity-card">
       <h2 id="humidity">Loading...</h2>
-      <p>Humidity</p>
+      <p id="humidity-text">Humidity</p>
     </div>
 
-    <div class="card-flat text-center">
+    <div class="card-flat text-center" id="visibility-card">
       <h2 id="visibility">Loading...</h2>
-      <p>Visibility</p>
+      <p id="visibility-text">Visibility</p>
     </div>
 
     <div class="card-flat text-center" id="uv-card">
@@ -50,9 +56,9 @@
       <p id="uv-text">UV Index</p>
     </div>
 
-    <div class="card-flat-left text-center">
+    <div class="card-flat-left text-center" id="rain-card">
       <h2 id="rain">Loading...</h2>
-      <p>Chance of precipitation</p>
+      <p id="rain-text">Chance of precipitation</p>
     </div>
   </div>
 

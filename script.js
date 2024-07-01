@@ -16,6 +16,12 @@ fetch(apiURL, {headers: {apikey: apiKey}})
 
     visibility /= 1000;
 
+    document.getElementById("temp").innerText = `${temperature} °C`;
+    document.getElementById("humidity").innerText = `${humidity}%`;
+    document.getElementById("visibility").innerText = `${visibility} km`;
+    document.getElementById("uv").innerText = `${uv}`;
+    document.getElementById("rain").innerText = `${rain}%`;
+
     if (localStorage.getItem("sport") == "boat" || localStorage.getItem("sport") == "jetski" || localStorage.getItem("sport") == "surf") {
       if (uv > 5) {
         uvHigh = true
@@ -27,12 +33,6 @@ fetch(apiURL, {headers: {apikey: apiKey}})
         uvHigh = true;
       }
     }
-
-    document.getElementById("temp").innerText = `${temperature} °C`;
-    document.getElementById("humidity").innerText = `${humidity}%`;
-    document.getElementById("visibility").innerText = `${visibility} km`;
-    document.getElementById("uv").innerText = `${uv}`;
-    document.getElementById("rain").innerText = `${rain}%`;
 
     if (uvHigh) {
       document.getElementById("uv-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
@@ -47,27 +47,33 @@ fetch(apiURL, {headers: {apikey: apiKey}})
     document.getElementById("bearing").innerText = `${windDirection}°`;
     document.getElementById("wind-description").innerText = `${windNormal} knots with gusts of ${windGusts} knots`;
 
-    if (isSafe() == "sport_not_set") {
+    if (isUnsafe() == "sport_not_set") {
       // Do nothing
     }
 
-    else if (isSafe() == "temp") {
+    else if (isUnsafe() == "temp") {
       document.getElementById("verdict-card").classList.add("card-error");
       document.getElementById("verdict-card").classList.remove("card-success");
 
       document.getElementById("verdict-icon").innerText = "emergency_heat";
       document.getElementById("verdict-text").innerText = "It's too hot to be on the water";
+
+      document.getElementById("temp-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      document.getElementById("temp-text").innerHTML += "<br> Drink water";
     }
 
-    else if (isSafe() == "rain") {
+    else if (isUnsafe() == "rain") {
       document.getElementById("verdict-card").classList.add("card-error");
       document.getElementById("verdict-card").classList.remove("card-success");
 
       document.getElementById("verdict-icon").innerText = "rainy";
       document.getElementById("verdict-text").innerText = "It's too rainy to be on the water";
+
+      document.getElementById("rain-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      document.getElementById("rain-text").innerHTML += "<br> Bring a coat";
     }
 
-    else if (isSafe() == "wind") {
+    else if (isUnsafe() == "wind") {
       document.getElementById("verdict-card").classList.add("card-error");
       document.getElementById("verdict-card").classList.remove("card-success");
 
@@ -75,12 +81,15 @@ fetch(apiURL, {headers: {apikey: apiKey}})
       document.getElementById("verdict-text").innerText = "It's too windy to be on the water";
     }
 
-    else if (isSafe() == "visibility") {
+    else if (isUnsafe() == "visibility") {
       document.getElementById("verdict-card").classList.add("card-error");
       document.getElementById("verdict-card").classList.remove("card-success");
 
       document.getElementById("verdict-icon").innerText = "foggy";
       document.getElementById("verdict-text").innerText = "Visibility is too low to be on the water";
+
+      document.getElementById("temp-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+      document.getElementById("temp-text").innerHTML += "<br> Keep the shore in sight";
     }
 
     else {
@@ -93,7 +102,7 @@ fetch(apiURL, {headers: {apikey: apiKey}})
   }
 );
 
-function isSafe() {
+function isUnsafe() {
   if (!localStorage.getItem("sport")) {
     return "sport_not_set";
   }
