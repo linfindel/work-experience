@@ -7,7 +7,9 @@ fetch(apiURL, {headers: {apikey: apiKey}})
     console.log(data.features[0].properties.timeSeries[0]);
   
     let temperature = data.features[0].properties.timeSeries[0].screenTemperature;
+    let rain = data.features[0].properties.timeSeries[0].probOfPrecipitation;
 
     document.getElementById("temp").innerText = `${temperature} °C`;
+    document.getElementById("rain").innerText = `${rain}%`;
   }
 );
