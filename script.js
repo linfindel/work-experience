@@ -34,7 +34,7 @@ fetch(apiURL, {headers: {apikey: apiKey}})
       // Do nothing
     }
 
-    if (isSafe() == "temp") {
+    else if (isSafe() == "temp") {
       document.getElementById("verdict-card").classList.add("card-error");
       document.getElementById("verdict-card").classList.remove("card-success");
 
