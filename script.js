@@ -89,24 +89,68 @@ function isSafe() {
     return "sport_not_set";
   }
 
-  else if (temperature < 5 || temperature > 30) {
+  if (temperature < 5 || temperature > 30) {
     return "temp";
-  }
-
-  else if (rain > 90) {
-    return "rain";
-  }
-
-  else if (windNormal > 13 || windGusts > 15) {
-    return "wind";
   }
 
   else if (uv > 5) {
     return "uv";
   }
 
-  else if (visibility < 1) {
-    return "visibility";
+  if (localStorage.getItem("sport") == "boat") {  
+    if (rain > 90) {
+      return "rain";
+    }
+  
+    else if (windNormal > 13 || windGusts > 15) {
+      return "wind";
+    }
+  
+    else if (visibility < 20) {
+      return "visibility";
+    }
+  }
+
+  else if (localStorage.getItem("sport") == "jetski") {  
+    if (rain > 75) {
+      return "rain";
+    }
+  
+    else if (windNormal > 13 || windGusts > 15) {
+      return "wind";
+    }
+  
+    else if (visibility < 20) {
+      return "visibility";
+    }
+  }
+
+  else if (localStorage.getItem("sport") == "surf") {  
+    if (rain > 75) {
+      return "rain";
+    }
+  
+    else if ((windNormal < 13 && windGusts < 15) && (windNormal < 75 || windGusts < 90)) {
+      return "wind";
+    }
+  
+    else if (visibility < 1) {
+      return "visibility";
+    }
+  }
+
+  else if (localStorage.getItem("sport") == "swim") {  
+    if (rain > 75) {
+      return "rain";
+    }
+  
+    else if (windNormal > 5 || windGusts > 10) {
+      return "wind";
+    }
+  
+    else if (visibility < 1) {
+      return "visibility";
+    }
   }
 
   else {
