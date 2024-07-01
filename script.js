@@ -14,9 +14,11 @@ fetch(apiURL, {headers: {apikey: apiKey}})
     uv = data.features[0].properties.timeSeries[0].uvIndex;
     rain = data.features[0].properties.timeSeries[0].probOfPrecipitation;
 
+    visibility /= 1000;
+
     document.getElementById("temp").innerText = `${temperature} °C`;
     document.getElementById("humidity").innerText = `${humidity}%`;
-    document.getElementById("visibility").innerText = `${visibility} metres`;
+    document.getElementById("visibility").innerText = `${visibility} km`;
     document.getElementById("uv").innerText = `${uv}`;
     document.getElementById("rain").innerText = `${rain}%`;
 
