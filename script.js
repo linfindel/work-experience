@@ -12,8 +12,8 @@ fetch(apiURL, {headers: {apikey: apiKey}})
     let rain = data.features[0].properties.timeSeries[0].probOfPrecipitation;
 
     document.getElementById("temp").innerText = `${temperature} °C`;
-    document.getElementById("humidity").innerText = `${humidity}`;
-    document.getElementById("uv").innerText = `${uv}%`;
+    document.getElementById("humidity").innerText = `${humidity}%`;
+    document.getElementById("uv").innerText = `${uv}`;
     document.getElementById("rain").innerText = `${rain}%`;
   }
 );
