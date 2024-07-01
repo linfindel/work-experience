@@ -2,7 +2,15 @@ if (!localStorage.getItem("api-url")) {
   localStorage.setItem("api-url", "https://data.hub.api.metoffice.gov.uk/sitespecific/v0/point/hourly?latitude=50.371389&longitude=-4.142222");
 }
 
-const apiKey = "eyJ4NXQiOiJOak16WWpreVlUZGlZVGM0TUdSalpEaGtaV1psWWpjME5UTXhORFV4TlRZM1ptRTRZV1JrWWc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJvZzM1MTUxM0BjYWxseXdpdGguYWMudWtAY2FyYm9uLnN1cGVyIiwiYXBwbGljYXRpb24iOnsib3duZXIiOiJvZzM1MTUxM0BjYWxseXdpdGguYWMudWsiLCJ0aWVyUXVvdGFUeXBlIjpudWxsLCJ0aWVyIjoiVW5saW1pdGVkIiwibmFtZSI6InNpdGVfc3BlY2lmaWMtMTdhYWI2MjMtOThmOS00MjNmLWEyNGQtYzE0MjQ0NzAzMmJmIiwiaWQiOjUwNzksInV1aWQiOiIzMmMxNzc2OC03MzBhLTQwMzYtODE4Mi0zYzFhNWZmNjc2MjAifSwiaXNzIjoiaHR0cHM6XC9cL2FwaS1tYW5hZ2VyLmFwaS1tYW5hZ2VtZW50Lm1ldG9mZmljZS5jbG91ZDo0NDNcL29hdXRoMlwvdG9rZW4iLCJ0aWVySW5mbyI6eyJ3ZGhfc2l0ZV9zcGVjaWZpY19mcmVlIjp7InRpZXJRdW90YVR5cGUiOiJyZXF1ZXN0Q291bnQiLCJncmFwaFFMTWF4Q29tcGxleGl0eSI6MCwiZ3JhcGhRTE1heERlcHRoIjowLCJzdG9wT25RdW90YVJlYWNoIjp0cnVlLCJzcGlrZUFycmVzdExpbWl0IjowLCJzcGlrZUFycmVzdFVuaXQiOiJzZWMifX0sImtleXR5cGUiOiJQUk9EVUNUSU9OIiwic3Vic2NyaWJlZEFQSXMiOlt7InN1YnNjcmliZXJUZW5hbnREb21haW4iOiJjYXJib24uc3VwZXIiLCJuYW1lIjoiU2l0ZVNwZWNpZmljRm9yZWNhc3QiLCJjb250ZXh0IjoiXC9zaXRlc3BlY2lmaWNcL3YwIiwicHVibGlzaGVyIjoiSmFndWFyX0NJIiwidmVyc2lvbiI6InYwIiwic3Vic2NyaXB0aW9uVGllciI6IndkaF9zaXRlX3NwZWNpZmljX2ZyZWUifV0sInRva2VuX3R5cGUiOiJhcGlLZXkiLCJpYXQiOjE3MTk4NDQ2MjQsImp0aSI6IjZjZTBjY2VhLTkyYTAtNDU2ZS04NjA3LTI4NzliZWM2Yzk3NiJ9.VSE00jlqjm37q50wHZXazsSfNIFRdpMkTngNysq4q6AYKT5Y2amCmoC8vuh_-ZBnPJiYb1w_o8_F99rnDiXobUFaeV5RsRKoaae3-jh8Ojit4gdz-mmPkzXjIbNSx2FB99I0PE9ZKiNv2jMnDRq7tu4GJpYgoIx3Uq8FCAb0pGUu2WyjxVkUhTLKrLKDw4F2fVczfg8JJIix8enUWWDyZ0EHwZp0raMrYPj9aseu8q1VJR5ylO16I7kXVDBk4JDksE49sLtGWUnwWrw7eLyjAkcWSfxIkMM1SoPshsLUzcuqcdV8oE2U15P9yNczr4Cy-gxHpAxLmQUsJfXhRw8i4w==";
+if (!localStorage.getItem("lat")) {
+  localStorage.setItem("lat", 50.371389);
+}
+
+if (!localStorage.getItem("long")) {
+  localStorage.setItem("long", -4.142222);
+}
+
+const apiKey = "eyJ4NXQiOiJOak16WWpreVlUZGlZVGM0TUdSalpEaGtaV1psWWpjME5UTXhORFV4TlRZM1ptRTRZV1JrWWc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJuYXRoYW5oYWRsZXkucGlnZW9uQGdtYWlsLmNvbUBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6Im5hdGhhbmhhZGxleS5waWdlb25AZ21haWwuY29tIiwidGllclF1b3RhVHlwZSI6bnVsbCwidGllciI6IlVubGltaXRlZCIsIm5hbWUiOiJzaXRlX3NwZWNpZmljLTkxMzQ1MmFiLTZlNWMtNDlhYy05MTRiLTA0Y2EwYTE5YzM3MyIsImlkIjo1MDgyLCJ1dWlkIjoiODliMDMyZWMtMjhiYi00OTIyLWFkMWMtYjA4YzgyN2FkN2U2In0sImlzcyI6Imh0dHBzOlwvXC9hcGktbWFuYWdlci5hcGktbWFuYWdlbWVudC5tZXRvZmZpY2UuY2xvdWQ6NDQzXC9vYXV0aDJcL3Rva2VuIiwidGllckluZm8iOnsid2RoX3NpdGVfc3BlY2lmaWNfZnJlZSI6eyJ0aWVyUXVvdGFUeXBlIjoicmVxdWVzdENvdW50IiwiZ3JhcGhRTE1heENvbXBsZXhpdHkiOjAsImdyYXBoUUxNYXhEZXB0aCI6MCwic3RvcE9uUXVvdGFSZWFjaCI6dHJ1ZSwic3Bpa2VBcnJlc3RMaW1pdCI6MCwic3Bpa2VBcnJlc3RVbml0Ijoic2VjIn19LCJrZXl0eXBlIjoiUFJPRFVDVElPTiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6IlNpdGVTcGVjaWZpY0ZvcmVjYXN0IiwiY29udGV4dCI6Ilwvc2l0ZXNwZWNpZmljXC92MCIsInB1Ymxpc2hlciI6IkphZ3Vhcl9DSSIsInZlcnNpb24iOiJ2MCIsInN1YnNjcmlwdGlvblRpZXIiOiJ3ZGhfc2l0ZV9zcGVjaWZpY19mcmVlIn1dLCJ0b2tlbl90eXBlIjoiYXBpS2V5IiwiaWF0IjoxNzE5ODQ1OTUzLCJqdGkiOiI0YTlmNWNlMC1lYTQzLTQ4YTYtODMwYy02N2EzNzBlODMyMzAifQ==.fnhoOw4T0vX8WgWtiTDaJ6oqhveQyCe7HoVU_z0PIuVLy8ppZIdUuQ2DBac4ouwHbSzUYcJJOlmOPdLj3Y0nrYRXffSUa_bXw879D6tVz2zKIlwJvw3UDwU9IdXuB2Lpd_lTyFhUMlZ2xEHF3J-EsHJS5ElLzppN7v71GXN0tdx_NyaDdKrqdQe5sUPamuqY-Z8eR6oKaVRbCgHc5FA8fBYWvHOwjd0pGCmd4PwjaepZ0UBaRqhoAY4cXlTeo1AF4miF2p-mn-Sl4Kgn0tZP7ZaqJaeElszGcyuJ_n-l664roru3EAxd84pNPGQh9p2InZ6cllmGIueCUaa2-4GsMg==";
 
 let temperature, humidity, visibility, uv, uvHigh, rain, windNormal, windGusts, windDirection;
 
@@ -223,17 +231,25 @@ if (!localStorage.getItem("sport")) {
   document.getElementById("verdict-text").style.fontSize = "1.5rem";
 }
 
-var map = L.map("map").setView([53, -2], 5);
+var map = L.map("map").setView([localStorage.getItem("lat"), localStorage.getItem("long")], 5);
 
 L.tileLayer("http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png", {
   maxZoom: 17,
 }).addTo(map);
 
-// L.marker(localStorage.getItem("latlong")).addTo(map);
+let latlong  = {
+  lat: localStorage.getItem("lat") || 50.371389,
+  lng: localStorage.getItem("long") || -4.142222
+}
+
+L.marker(latlong).addTo(map);
 
 map.on('click', function(e){
   let lat = Math.round(e.latlng.lat);
   let long = Math.round(e.latlng.lng);
+
+  localStorage.setItem("lat", lat);
+  localStorage.setItem("long", long);
 
   localStorage.setItem("api-url", `https://data.hub.api.metoffice.gov.uk/sitespecific/v0/point/hourly?latitude=${lat}&longitude=${long}`);
 
