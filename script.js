@@ -93,10 +93,6 @@ function isSafe() {
     return "temp";
   }
 
-  else if (uv > 5) {
-    return "uv";
-  }
-
   if (localStorage.getItem("sport") == "boat") {  
     if (rain > 90) {
       return "rain";
@@ -108,6 +104,10 @@ function isSafe() {
   
     else if (visibility < 20) {
       return "visibility";
+    }
+
+    else if (uv > 5) {
+      return "uv";
     }
   }
 
@@ -123,6 +123,28 @@ function isSafe() {
     else if (visibility < 20) {
       return "visibility";
     }
+
+    else if (uv > 5) {
+      return "uv";
+    }
+  }
+
+  else if (localStorage.getItem("sport") == "paddle") {  
+    if (rain > 75) {
+      return "rain";
+    }
+  
+    else if (windNormal > 13 || windGusts > 15) {
+      return "wind";
+    }
+  
+    else if (visibility < 2) {
+      return "visibility";
+    }
+
+    else if (uv > 4) {
+      return "uv";
+    }
   }
 
   else if (localStorage.getItem("sport") == "surf") {  
@@ -130,12 +152,16 @@ function isSafe() {
       return "rain";
     }
   
-    else if ((windNormal < 13 && windGusts < 15) && (windNormal < 75 || windGusts < 90)) {
+    else if ((windNormal < 13 || windGusts < 15) && (windNormal < 75 || windGusts < 90)) {
       return "wind";
     }
   
     else if (visibility < 1) {
       return "visibility";
+    }
+
+    else if (uv > 5) {
+      return "uv";
     }
   }
 
@@ -150,6 +176,10 @@ function isSafe() {
   
     else if (visibility < 1) {
       return "visibility";
+    }
+
+    else if (uv > 4) {
+      return "uv";
     }
   }
 

@@ -3,6 +3,7 @@ function setSport(sport) {
 
   document.getElementById("boat").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
   document.getElementById("jetski").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  document.getElementById("paddle").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
   document.getElementById("surf").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
   document.getElementById("swim").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
 
