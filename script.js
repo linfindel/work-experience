@@ -8,10 +8,12 @@ fetch(apiURL, {headers: {apikey: apiKey}})
   
     let temperature = data.features[0].properties.timeSeries[0].screenTemperature;
     let humidity = data.features[0].properties.timeSeries[0].screenRelativeHumidity;
+    let uv = data.features[0].properties.timeSeries[0].uvIndex;
     let rain = data.features[0].properties.timeSeries[0].probOfPrecipitation;
 
     document.getElementById("temp").innerText = `${temperature} °C`;
-    document.getElementById("humidity").innerText = `${humidity}%`;
+    document.getElementById("humidity").innerText = `${humidity}`;
+    document.getElementById("uv").innerText = `${uv}%`;
     document.getElementById("rain").innerText = `${rain}%`;
   }
 );
