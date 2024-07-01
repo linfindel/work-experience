@@ -85,7 +85,7 @@ fetch(apiURL, {headers: {apikey: apiKey}})
 );
 
 function isSafe() {
-  if (localStorage.getItem("sport")) {
+  if (!localStorage.getItem("sport")) {
     return "sport_not_set";
   }
 
