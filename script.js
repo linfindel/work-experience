@@ -105,3 +105,13 @@ function isSafe() {
     return true;
   }
 }
+
+if (!localStorage.getItem("sport")) {
+  document.getElementById("verdict-card").className = "";
+  document.getElementById("verdict-card").classList.add("card-warning");
+  document.getElementById("verdict-card").classList.add("column");
+  document.getElementById("verdict-card").style.gap = 0;
+
+  document.getElementById("verdict-icon").innerText = "warning";
+  document.getElementById("verdict-text").innerText = "For safety advice, set a watersport in the settings";
+}

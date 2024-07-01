@@ -9,9 +9,18 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-  <nav style="background-image: url(plymouth.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
-    <h1>Conditions in Plymouth</h1>
-  </nav>
+  <div class="navbar-column">
+    <nav style="background-image: url(plymouth.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
+      <h1>Conditions in Plymouth</h1>
+    </nav>
+
+    <div class="row">
+      <button onclick="location.href = 'settings.html'">
+        <span class="material-symbols-rounded">settings</span>
+        Settings
+      </button>
+    </div>
+  </div>
 
   <div id="verdict-card" class="card-success row">
     <h1 id="verdict-icon" style="font-size: 5rem;" class="material-symbols-rounded">verified</h1>

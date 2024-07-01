@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+
+  <link rel="stylesheet" href="https://linfindel.github.io/nadircss/nadir.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+  <div class="navbar-column">
+    <nav>
+      <h1>Settings</h1>
+    </nav>
+  
+    <div class="row">
+      <button onclick="location.href = '/'">
+        <span class="material-symbols-rounded">arrow_back</span>
+        Back
+      </button>
+
+      <button onclick="localStorage.clear(); location.href = '/'">
+        <span class="material-symbols-rounded">delete</span>
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <div class="card column">
+    <h2>Selected Watersport</h2>
+
+    <div class="row-flat" id="sport-button-row">
+      <button onclick="setSport('boat')" class="card-flat-right column" id="boat">
+        <span class="material-symbols-rounded">sailing</span>
+        Boating
+      </button>
+
+      <button onclick="setSport('jetski')" class="card-flat column" id="jetski">
+        <span class="material-symbols-rounded">kitesurfing</span>
+        Jet Skiing
+      </button>
+      
+      <button onclick="setSport('surf')" class="card-flat column" id="surf">
+        <span class="material-symbols-rounded">surfing</span>
+        Surfing
+      </button>
+
+      <button onclick="setSport('swim')" class="card-flat-left column" id="swim">
+        <span class="material-symbols-rounded">pool</span>
+        Swimming
+      </button>
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
