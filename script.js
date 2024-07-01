@@ -113,5 +113,8 @@ if (!localStorage.getItem("sport")) {
   document.getElementById("verdict-card").style.gap = 0;
 
   document.getElementById("verdict-icon").innerText = "warning";
+  document.getElementById("verdict-icon").style.fontSize = "2.5rem";
+
   document.getElementById("verdict-text").innerText = "For safety advice, set a watersport in the settings";
+  document.getElementById("verdict-text").style.fontSize = "1.5rem";
 }
