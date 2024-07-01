@@ -16,13 +16,13 @@
       <h1>Settings</h1>
     </nav>
   
-    <div class="row">
-      <button onclick="location.href = '.'">
+    <div class="row" id="action-button-row">
+      <button onclick="location.href = '.'" id="back-button">
         <span translate="no" class="material-symbols-rounded">arrow_back</span>
         Back
       </button>
 
-      <button onclick="localStorage.clear(); location.href = '.'">
+      <button onclick="localStorage.clear(); location.href = '.'" id="reset-button">
         <span translate="no" class="material-symbols-rounded">delete</span>
         Reset
       </button>

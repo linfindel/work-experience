@@ -238,6 +238,7 @@ if (!localStorage.getItem("sport")) {
   document.getElementById("verdict-card").classList.add("card-warning");
   document.getElementById("verdict-card").classList.add("column");
   document.getElementById("verdict-card").style.gap = 0;
+  document.getElementById("verdict-card").style.textAlign = "center";
 
   document.getElementById("verdict-icon").innerText = "warning";
   document.getElementById("verdict-icon").style.fontSize = "2.5rem";
@@ -271,3 +272,47 @@ map.on('click', function(e){
 
   location.reload();
 });
+
+// Responsiveness stuff
+if (window.innerWidth < window.innerHeight) {
+  // Button
+  document.getElementById("action-button-row").style.width = "100%";
+  document.getElementById("settings-button").style.flex = "1";
+
+  // Map and image section
+  document.getElementById("map").style.width = "90vw";
+  document.getElementById("map").style.borderRadius = "24px";
+  document.getElementById("map").style.borderBottomLeftRadius = "7px";
+  document.getElementById("map").style.borderBottomRightRadius = "7px";
+
+  document.getElementById("img").style.width = "90vw";
+  document.getElementById("img").style.borderRadius = "24px";
+  document.getElementById("img").style.borderTopLeftRadius = "7px";
+  document.getElementById("img").style.borderTopRightRadius = "7px";
+
+  // Stats section
+  document.getElementById("verdict-card").style.width = "calc(90vw - 5rem)";
+
+  document.getElementById("stats-row").style.flexDirection = "column";
+
+  document.getElementById("temp-card").style.width = "calc(90vw - 5rem)";
+  document.getElementById("temp-card").style.borderRadius = "24px";
+  document.getElementById("temp-card").style.borderBottomLeftRadius = "7px";
+  document.getElementById("temp-card").style.borderBottomRightRadius = "7px";
+
+  document.getElementById("humidity-card").style.width = "calc(90vw - 5rem)";
+  document.getElementById("humidity-card").style.borderRadius = "7px";
+
+  document.getElementById("visibility-card").style.width = "calc(90vw - 5rem)";
+  document.getElementById("visibility-card").style.borderRadius = "7px";
+
+  document.getElementById("uv-card").style.width = "calc(90vw - 5rem)";
+  document.getElementById("uv-card").style.borderRadius = "7px";
+
+  document.getElementById("rain-card").style.width = "calc(90vw - 5rem)";
+  document.getElementById("rain-card").style.borderRadius = "24px";
+  document.getElementById("rain-card").style.borderTopLeftRadius = "7px";
+  document.getElementById("rain-card").style.borderTopRightRadius = "7px";
+
+  document.getElementById("wind-card").style.width = "calc(90vw - 5rem)";
+}
