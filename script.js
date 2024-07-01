@@ -161,7 +161,7 @@ function isUnsafe() {
       return "wind";
     }
   
-    else if (visibility < 20) {
+    else if (visibility < 3) {
       return "visibility";
     }
   }
@@ -175,7 +175,7 @@ function isUnsafe() {
       return "wind";
     }
   
-    else if (visibility < 20) {
+    else if (visibility < 1) {
       return "visibility";
     }
   }
@@ -189,7 +189,7 @@ function isUnsafe() {
       return "wind";
     }
   
-    else if (visibility < 2) {
+    else if (visibility < 0.5) {
       return "visibility";
     }
   }
@@ -203,7 +203,7 @@ function isUnsafe() {
       return "wind";
     }
   
-    else if (visibility < 1) {
+    else if (visibility < 0.1) {
       return "visibility";
     }
   }
@@ -217,7 +217,7 @@ function isUnsafe() {
       return "wind";
     }
   
-    else if (visibility < 1) {
+    else if (visibility < 0.5) {
       return "visibility";
     }
   }
