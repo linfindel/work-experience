@@ -4,6 +4,8 @@ const apiURL = "https://data.hub.api.metoffice.gov.uk/sitespecific/v0/point/hour
 fetch(apiURL, {headers: {apikey: apiKey}})
 .then(response => response.json())
 .then(data => {
-    console.log(data.parameters[0].screenTemperature);
+    let temperature = data.features[0].properties.timeSeries[0].screenTemperature;
+
+    document.getElementById("temp").innerText = `${temperature} °C`;
   }
 );
