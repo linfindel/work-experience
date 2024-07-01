@@ -238,7 +238,6 @@ if (!localStorage.getItem("sport")) {
   document.getElementById("verdict-card").classList.add("card-warning");
   document.getElementById("verdict-card").classList.add("column");
   document.getElementById("verdict-card").style.gap = 0;
-  document.getElementById("verdict-card").style.textAlign = "center";
 
   document.getElementById("verdict-icon").innerText = "warning";
   document.getElementById("verdict-icon").style.fontSize = "2.5rem";
