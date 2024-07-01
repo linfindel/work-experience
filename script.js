@@ -105,7 +105,7 @@ function isSafe() {
     return "uv";
   }
 
-  else if (visibility < 500) {
+  else if (visibility < 1) {
     return "visibility";
   }
 
