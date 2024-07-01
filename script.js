@@ -59,11 +59,21 @@ function fetchData() {
         document.getElementById("verdict-card").classList.add("card-error");
         document.getElementById("verdict-card").classList.remove("card-success");
 
-        document.getElementById("verdict-icon").innerText = "emergency_heat";
-        document.getElementById("verdict-text").innerText = "It's too hot to be on the water";
+        if (temperature > 30) {
+          document.getElementById("verdict-icon").innerText = "emergency_heat";
+          document.getElementById("verdict-text").innerText = "It's too hot to be on the water";
+
+          document.getElementById("temp-text").innerHTML += "<br> Drink water";
+        }
+
+        else if (temperature < 5) {
+          document.getElementById("verdict-icon").innerText = "severe_colt";
+          document.getElementById("verdict-text").innerText = "It's too cold to be on the water";
+
+          document.getElementById("temp-text").innerHTML += "<br> Wrap up warm";
+        }
 
         document.getElementById("temp-card").style.backgroundColor = "rgba(255, 0, 0, 0.25)";
-        document.getElementById("temp-text").innerHTML += "<br> Drink water";
       }
 
       else if (isUnsafe() == "rain") {
@@ -217,7 +227,7 @@ function openMap() {
   }).addTo(map);
 
   map.on('click', function(e){
-    console.log(e.latlng);
+    localStorage.setItem("latlong", e.latlng);
 
     let lat = Math.round(e.latlng.lat);
     let long = Math.round(e.latlng.lng);
