@@ -30,6 +30,10 @@ fetch(apiURL, {headers: {apikey: apiKey}})
     document.getElementById("bearing").innerText = `${windDirection}°`;
     document.getElementById("wind-description").innerText = `${windNormal} knots with gusts of ${windGusts} knots`;
 
+    if (isSafe() == "sport_not_set") {
+      // Do nothing
+    }
+
     if (isSafe() == "temp") {
       document.getElementById("verdict-card").classList.add("card-error");
       document.getElementById("verdict-card").classList.remove("card-success");
@@ -81,7 +85,11 @@ fetch(apiURL, {headers: {apikey: apiKey}})
 );
 
 function isSafe() {
-  if (temperature < 5 || temperature > 30) {
+  if (localStorage.getItem("sport")) {
+    return "sport_not_set";
+  }
+
+  else if (temperature < 5 || temperature > 30) {
     return "temp";
   }
 
