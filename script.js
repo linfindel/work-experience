@@ -28,7 +28,7 @@ fetch(apiURL, {headers: {apikey: apiKey}})
 
     document.getElementById("compass-needle").style.rotate = `${windDirection}deg`;
     document.getElementById("bearing").innerText = `${windDirection}°`;
-    document.getElementById("wind-description").innerText = `${windNormal}mph with gusts of ${windGusts}mph`;
+    document.getElementById("wind-description").innerText = `${windNormal} knots with gusts of ${windGusts} knots`;
 
     if (isSafe() == "temp") {
       document.getElementById("verdict-card").classList.add("card-error");
