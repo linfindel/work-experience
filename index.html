@@ -33,6 +33,12 @@
     #stats-row div {
       height: 7.5rem;
     }
+
+    #temp-card, #humidity-card, #visibility-card, #uv-card, #rain-card {
+      flex-direction: column-reverse;
+      gap: 0;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -61,29 +67,29 @@
   </div>
 
   <div class="row-flat" id="stats-row">
-    <div class="card-flat-right text-center" id="temp-card">
-      <h2 id="temp">Loading...</h2>
+    <div class="card-flat-right column" id="temp-card">
       <p id="temp-text">Temperature</p>
+      <h2 id="temp">Loading...</h2>
     </div>
 
-    <div class="card-flat text-center" id="humidity-card">
-      <h2 id="humidity">Loading...</h2>
+    <div class="card-flat column" id="humidity-card">
       <p id="humidity-text">Humidity</p>
+      <h2 id="humidity">Loading...</h2>
     </div>
 
-    <div class="card-flat text-center" id="visibility-card">
-      <h2 id="visibility">Loading...</h2>
+    <div class="card-flat column" id="visibility-card">
       <p id="visibility-text">Visibility</p>
+      <h2 id="visibility">Loading...</h2>
     </div>
 
-    <div class="card-flat text-center" id="uv-card">
-      <h2 id="uv">Loading...</h2>
+    <div class="card-flat column" id="uv-card">
       <p id="uv-text">UV Index</p>
+      <h2 id="uv">Loading...</h2>
     </div>
 
-    <div class="card-flat-left text-center" id="rain-card">
-      <h2 id="rain">Loading...</h2>
+    <div class="card-flat-left column" id="rain-card">
       <p id="rain-text">Chance of precipitation</p>
+      <h2 id="rain">Loading...</h2>
     </div>
   </div>
 
