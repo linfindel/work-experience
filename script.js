@@ -16,6 +16,7 @@ fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${local
   console.log(data);
   let backupCoords = `${localStorage.getItem("lat")}, ${localStorage.getItem("long")}`;
 
+  document.title = `Conditions in ${data.city || data.countryName || backupCoords}`
   document.getElementById("title").innerText = `Conditions in ${data.city || data.countryName || backupCoords}`
 
   fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(data.city || data.countryName)}`)
