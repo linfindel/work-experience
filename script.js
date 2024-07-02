@@ -79,7 +79,6 @@ const weatherCodeIcons = {
   30: "thunderstorm"
 }
 
-
 function fetchData() {
   fetch(localStorage.getItem("api-url"), {headers: {apikey: apiKey}})
   .then(response => response.json())
@@ -200,6 +199,8 @@ function fetchData() {
   fetch(localStorage.getItem("api-url").replace("hourly", "daily"), {headers: {apikey: apiKey}})
   .then(response => response.json())
   .then(data => {
+    console.log(data.features[0].properties.timeSeries[1])
+
     for (let index = 1; index <= 8; index++) {
       let code = getWeatherDescription(data.features[0].properties.timeSeries[index].daySignificantWeatherCode);
 
