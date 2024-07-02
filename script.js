@@ -499,4 +499,8 @@ setInterval(() => {
     document.getElementById("rain-card").style.width = "";
     document.getElementById("wind-card").style.width = "";
   }
+
+  if (document.getElementById("forecast-row").scrollWidth <= document.getElementById("forecast-row").clientWidth) {
+    document.getElementById("forecast-row").style.justifyContent = "center";
+  }
 }, 100);
