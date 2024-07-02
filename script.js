@@ -286,8 +286,8 @@ let latlong  = {
 L.marker(latlong).addTo(map);
 
 map.on('click', function(e){
-  let lat = Math.round(e.latlng.lat);
-  let long = Math.round(e.latlng.lng);
+  let lat = e.latlng.lat;
+  let long = e.latlng.lng;
 
   localStorage.setItem("lat", lat);
   localStorage.setItem("long", long);
