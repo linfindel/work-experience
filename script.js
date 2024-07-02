@@ -255,6 +255,14 @@ if (!localStorage.getItem("sport")) {
   document.getElementById("verdict-card").classList.add("column");
   document.getElementById("verdict-card").style.gap = 0;
 
+  document.getElementById("verdict-card").onmouseenter = () => {
+    document.getElementById("settings-button").style.boxShadow = "0px 0px 0px 2px white";
+  }
+
+  document.getElementById("verdict-card").onmouseleave = () => {
+    document.getElementById("settings-button").style.boxShadow = "";
+  }
+
   document.getElementById("verdict-icon").innerText = "warning";
   document.getElementById("verdict-icon").style.fontSize = "2.5rem";
 
