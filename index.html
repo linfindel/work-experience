@@ -34,6 +34,14 @@
       height: 7.5rem;
     }
 
+    #forecast-row {
+      height: 25rem;
+    }
+
+    #forecast-row div {
+      height: 20rem;
+    }
+
     #temp-card, #humidity-card, #visibility-card, #uv-card, #rain-card {
       flex-direction: column-reverse;
       gap: 0;
@@ -52,6 +60,50 @@
         <span translate="no" class="material-symbols-rounded">settings</span>
         Settings
       </button>
+    </div>
+  </div>
+
+  <div id="forecast-row" class="row-flat" style="width: 90vw; overflow-x: scroll; flex-wrap: nowrap; justify-content: flex-start;">
+    <div class="card-flat-right column text-center">
+      <h1 id="day1-icon" style="font-size: 4rem;" class="material-symbols-rounded"></h1>
+      <h2 id="day1-description"></h2>
+      <h2 id="day1-date"></h2>
+    </div>
+
+    <div class="card-flat column text-center">
+      <h1 id="day2-icon" style="font-size: 4rem;" class="material-symbols-rounded"></h1>
+      <h2 id="day2-description"></h2>
+      <h2 id="day2-date"></h2>
+    </div>
+
+    <div class="card-flat column text-center">
+      <h1 id="day3-icon" style="font-size: 4rem;" class="material-symbols-rounded"></h1>
+      <h2 id="day3-description"></h2>
+      <h2 id="day3-date"></h2>
+    </div>
+
+    <div class="card-flat column text-center">
+      <h1 id="day4-icon" style="font-size: 4rem;" class="material-symbols-rounded"></h1>
+      <h2 id="day4-description"></h2>
+      <h2 id="day4-date"></h2>
+    </div>
+
+    <div class="card-flat column text-center">
+      <h1 id="day5-icon" style="font-size: 4rem;" class="material-symbols-rounded"></h1>
+      <h2 id="day5-description"></h2>
+      <h2 id="day5-date"></h2>
+    </div>
+
+    <div class="card-flat column text-center">
+      <h1 id="day6-icon" style="font-size: 4rem;" class="material-symbols-rounded"></h1>
+      <h2 id="day6-description"></h2>
+      <h2 id="day6-date"></h2>
+    </div>
+
+    <div class="card-flat-left column text-center">
+      <h1 id="day7-icon" style="font-size: 4rem;" class="material-symbols-rounded"></h1>
+      <h2 id="day7-description"></h2>
+      <h2 id="day7-date"></h2>
     </div>
   </div>
 

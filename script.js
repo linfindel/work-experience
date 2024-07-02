@@ -42,9 +42,43 @@ fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${local
     });;
 });
 
-const apiKey = "eyJ4NXQiOiJOak16WWpreVlUZGlZVGM0TUdSalpEaGtaV1psWWpjME5UTXhORFV4TlRZM1ptRTRZV1JrWWc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJuYXRoYW5oYWRsZXkucGlnZW9uQGdtYWlsLmNvbUBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6Im5hdGhhbmhhZGxleS5waWdlb25AZ21haWwuY29tIiwidGllclF1b3RhVHlwZSI6bnVsbCwidGllciI6IlVubGltaXRlZCIsIm5hbWUiOiJzaXRlX3NwZWNpZmljLTkxMzQ1MmFiLTZlNWMtNDlhYy05MTRiLTA0Y2EwYTE5YzM3MyIsImlkIjo1MDk0LCJ1dWlkIjoiOTQyNmYxMjgtYjkzMy00MzNiLThjYTUtMWZjMmM4OTY4NWY0In0sImlzcyI6Imh0dHBzOlwvXC9hcGktbWFuYWdlci5hcGktbWFuYWdlbWVudC5tZXRvZmZpY2UuY2xvdWQ6NDQzXC9vYXV0aDJcL3Rva2VuIiwidGllckluZm8iOnsid2RoX3NpdGVfc3BlY2lmaWNfZnJlZSI6eyJ0aWVyUXVvdGFUeXBlIjoicmVxdWVzdENvdW50IiwiZ3JhcGhRTE1heENvbXBsZXhpdHkiOjAsImdyYXBoUUxNYXhEZXB0aCI6MCwic3RvcE9uUXVvdGFSZWFjaCI6dHJ1ZSwic3Bpa2VBcnJlc3RMaW1pdCI6MCwic3Bpa2VBcnJlc3RVbml0Ijoic2VjIn19LCJrZXl0eXBlIjoiUFJPRFVDVElPTiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6IlNpdGVTcGVjaWZpY0ZvcmVjYXN0IiwiY29udGV4dCI6Ilwvc2l0ZXNwZWNpZmljXC92MCIsInB1Ymxpc2hlciI6IkphZ3Vhcl9DSSIsInZlcnNpb24iOiJ2MCIsInN1YnNjcmlwdGlvblRpZXIiOiJ3ZGhfc2l0ZV9zcGVjaWZpY19mcmVlIn1dLCJ0b2tlbl90eXBlIjoiYXBpS2V5IiwiaWF0IjoxNzE5OTEyMzIxLCJqdGkiOiJlYTlkYmJlMi1hMmQ4LTRhMzgtYjAwYi02Yzg3YmI0ZjFhNzYifQ==.I8Yimbj49xc3QG7o_2mFWUx8PAc4jZVxLI2PXJmZsAe9I3hBoXnIWKfzmwDDRH62DIeLNpeTskF21-Gl8eAAA-PEBdR3yTkcYy6m-tN7BjJp6gDfMGS5laPGG_JSk3ZiYE9rmmTYCXyVNZFOeV1roYiDEoz09aYiBEHk868exvkgcM1wjTLcOqPQwWSBigi1mQERLpineqd2glWYe3V2_wjvwByjGt7DuOtl66lalctetiuZ8HjLw7pa257lpx5DSwF-Kpb4A1ohn_LrVq9QvZ5lEMMtSNjA8SsaOYOGFYTEiblJwOWA6rzUZrMxr8vNOHk7Bh7L5r2KdsYmPMWQcg==";
+const apiKey = "eyJ4NXQiOiJOak16WWpreVlUZGlZVGM0TUdSalpEaGtaV1psWWpjME5UTXhORFV4TlRZM1ptRTRZV1JrWWc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJuYXRoYW5oYWRsZXkucGlnZW9uQGdtYWlsLmNvbUBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6Im5hdGhhbmhhZGxleS5waWdlb25AZ21haWwuY29tIiwidGllclF1b3RhVHlwZSI6bnVsbCwidGllciI6IlVubGltaXRlZCIsIm5hbWUiOiJzaXRlX3NwZWNpZmljLTkxMzQ1MmFiLTZlNWMtNDlhYy05MTRiLTA0Y2EwYTE5YzM3MyIsImlkIjo1MTA5LCJ1dWlkIjoiMDJiY2U5NjMtZjM0MS00ZjQ0LThhYjktNzFkZGExMjBjM2E4In0sImlzcyI6Imh0dHBzOlwvXC9hcGktbWFuYWdlci5hcGktbWFuYWdlbWVudC5tZXRvZmZpY2UuY2xvdWQ6NDQzXC9vYXV0aDJcL3Rva2VuIiwidGllckluZm8iOnsid2RoX3NpdGVfc3BlY2lmaWNfZnJlZSI6eyJ0aWVyUXVvdGFUeXBlIjoicmVxdWVzdENvdW50IiwiZ3JhcGhRTE1heENvbXBsZXhpdHkiOjAsImdyYXBoUUxNYXhEZXB0aCI6MCwic3RvcE9uUXVvdGFSZWFjaCI6dHJ1ZSwic3Bpa2VBcnJlc3RMaW1pdCI6MCwic3Bpa2VBcnJlc3RVbml0Ijoic2VjIn19LCJrZXl0eXBlIjoiUFJPRFVDVElPTiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6IlNpdGVTcGVjaWZpY0ZvcmVjYXN0IiwiY29udGV4dCI6Ilwvc2l0ZXNwZWNpZmljXC92MCIsInB1Ymxpc2hlciI6IkphZ3Vhcl9DSSIsInZlcnNpb24iOiJ2MCIsInN1YnNjcmlwdGlvblRpZXIiOiJ3ZGhfc2l0ZV9zcGVjaWZpY19mcmVlIn1dLCJ0b2tlbl90eXBlIjoiYXBpS2V5IiwiaWF0IjoxNzE5OTI2NTg5LCJqdGkiOiIyOWM4YTIwMS03OGNiLTQxOTktOGI5YS0yOGVjYjY4ZDUxZTQifQ==.E9J3H1xjitaw6cgpRxJAhUIEF7D-C2SYVBSlJdPlRBvy2BaXUm2IVIJBFR0WAP3a6pm_dJbNzp017RCeu7m6F4Im3IeuSV95lKaWGVFVmVmYfCKjXY5cYTQC5rq4DvIYOCDjxl9gr4yCZ67enaHD1ctJb1FoQncsIHUSp9T_DjN3z2FaPgvvCchXSXzAymdvVGBcmOy-5_jo9Hf_2Mn5t41le4IElgLn90q2cQzGnIAbKvC05C3IkANL_kZUWcSg7NksC3v_aTmOkNxX66mQrmazV9gpn3d0lRh1zDIhUA5xr8nqUxRKA0am2stJ3z2s4MobGHIoLb4Xpo1W4GelDg==";
 
 let temperature, humidity, visibility, uv, uvHigh, rain, windNormal, windGusts, windDirection;
+
+const weatherCodeIcons = {
+  0: "bedtime",
+  1: "sunny",
+  2: "partly_cloudy_night",
+  3: "partly_cloudy_day",
+  5: "mist",
+  6: "foggy",
+  7: "cloud",
+  8: "foggy",
+  9: "rainy_light",
+  10: "rainy_light",
+  11: "rainy_light",
+  12: "rainy_light",
+  13: "rainy_heavy",
+  14: "rainy_heavy",
+  15: "rainy_heavy",
+  16: "rainy_snow",
+  17: "rainy_snow",
+  18: "rainy_snow",
+  19: "weather_hail",
+  20: "weather_hail",
+  21: "weather_hail",
+  22: "cloudy_snowing",
+  23: "cloudy_snowing",
+  24: "cloudy_snowing",
+  25: "rainy_snow",
+  26: "rainy_snow",
+  27: "rainy_snow",
+  28: "thunderstorm",
+  29: "thunderstorm",
+  30: "thunderstorm"
+}
+
 
 function fetchData() {
   fetch(localStorage.getItem("api-url"), {headers: {apikey: apiKey}})
@@ -162,9 +196,95 @@ function fetchData() {
       }
     }
   );
+
+  fetch(localStorage.getItem("api-url").replace("hourly", "daily"), {headers: {apikey: apiKey}})
+  .then(response => response.json())
+  .then(data => {
+    for (let index = 1; index <= 8; index++) {
+      let code = getWeatherDescription(data.features[0].properties.timeSeries[index].daySignificantWeatherCode);
+
+      document.getElementById(`day${index}-icon`).innerText = weatherCodeIcons[data.features[0].properties.timeSeries[index].daySignificantWeatherCode];
+      document.getElementById(`day${index}-description`).innerText = code;
+      document.getElementById(`day${index}-date`).innerText = data.features[0].properties.timeSeries[index].time.replace("T00:00Z", "");       
+    }
+  })
 }
 
 fetchData();
+
+function getWeatherDescription(code) {
+  let description = '';
+
+  if (code === -1) {
+      description = "Trace rain";
+  } else if (code === 0) {
+      description = "Clear night";
+  } else if (code === 1) {
+      description = "Sunny day";
+  } else if (code === 2) {
+      description = "Partly cloudy";
+  } else if (code === 3) {
+      description = "Partly cloudy";
+  } else if (code === 4) {
+      description = "Not used";
+  } else if (code === 5) {
+      description = "Mist";
+  } else if (code === 6) {
+      description = "Fog";
+  } else if (code === 7) {
+      description = "Cloudy";
+  } else if (code === 8) {
+      description = "Overcast";
+  } else if (code === 9) {
+      description = "Light rain shower";
+  } else if (code === 10) {
+      description = "Light rain shower";
+  } else if (code === 11) {
+      description = "Drizzle";
+  } else if (code === 12) {
+      description = "Light rain";
+  } else if (code === 13) {
+      description = "Heavy rain shower";
+  } else if (code === 14) {
+      description = "Heavy rain shower";
+  } else if (code === 15) {
+      description = "Heavy rain";
+  } else if (code === 16) {
+      description = "Sleet shower";
+  } else if (code === 17) {
+      description = "Sleet shower";
+  } else if (code === 18) {
+      description = "Sleet";
+  } else if (code === 19) {
+      description = "Hail shower";
+  } else if (code === 20) {
+      description = "Hail shower";
+  } else if (code === 21) {
+      description = "Hail";
+  } else if (code === 22) {
+      description = "Light snow shower";
+  } else if (code === 23) {
+      description = "Light snow shower";
+  } else if (code === 24) {
+      description = "Light snow";
+  } else if (code === 25) {
+      description = "Heavy snow shower";
+  } else if (code === 26) {
+      description = "Heavy snow shower";
+  } else if (code === 27) {
+      description = "Heavy snow";
+  } else if (code === 28) {
+      description = "Thunder shower";
+  } else if (code === 29) {
+      description = "Thunder shower";
+  } else if (code === 30) {
+      description = "Thunder";
+  } else {
+      description = "Unknown weather code";
+  }
+
+  return description;
+}
 
 function isUnsafe() {
   if (!localStorage.getItem("sport")) {
