@@ -21,7 +21,23 @@ fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${local
   fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(data.city || data.countryName)}`)
     .then(response => response.json())
     .then(data => {
-      document.getElementById("img").src = data.originalimage.source;
+      if (data.originalimage) {
+        localStorage.setItem("has-image", "yes");
+
+        document.getElementById("img").src = data.originalimage.source;
+
+        document.getElementById("map").style.borderTopRightRadius = "7px";
+        document.getElementById("map").style.borderBottomRightRadius = "7px";
+      }
+
+      else {
+        localStorage.setItem("has-image", "no");
+
+        document.getElementById("img").src = "";
+
+        document.getElementById("map").style.borderTopRightRadius = "24px";
+        document.getElementById("map").style.borderBottomRightRadius = "24px";
+      }
     });;
 });
 
@@ -282,6 +298,7 @@ setInterval(() => {
     // Map and image section
     document.getElementById("map").style.width = "90vw";
     document.getElementById("map").style.borderRadius = "24px";
+    
     document.getElementById("map").style.borderBottomLeftRadius = "7px";
     document.getElementById("map").style.borderBottomRightRadius = "7px";
   
@@ -325,8 +342,16 @@ setInterval(() => {
     // Map and image section
     document.getElementById("map").style.width = "50vw";
     document.getElementById("map").style.borderRadius = "24px";
-    document.getElementById("map").style.borderTopRightRadius = "7px";
-    document.getElementById("map").style.borderBottomRightRadius = "7px";
+    
+    if (localStorage.getItem("has-image") == "yes") {
+      document.getElementById("map").style.borderTopRightRadius = "7px";
+      document.getElementById("map").style.borderBottomRightRadius = "7px";
+    }
+
+    else {
+      document.getElementById("map").style.borderTopRightRadius = "24px";
+      document.getElementById("map").style.borderBottomRightRadius = "24px";
+    }
   
     document.getElementById("img").style.width = "";
     document.getElementById("img").style.borderRadius = "24px";
