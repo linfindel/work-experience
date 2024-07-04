@@ -228,7 +228,7 @@ function getWeatherDescription(code) {
   } else if (code === 0) {
       description = "Clear night";
   } else if (code === 1) {
-      description = "Sunny day";
+      description = "Sunny";
   } else if (code === 2) {
       description = "Partly cloudy";
   } else if (code === 3) {
