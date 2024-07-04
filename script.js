@@ -403,7 +403,7 @@ var map = L.map("map").setView([localStorage.getItem("lat"), localStorage.getIte
 
 L.tileLayer("http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png", {
   maxZoom: 17,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  attribution: '&copy; <a href="http://www.openstreetmap.org" target="_blank">OpenStreetMap</a>'
 }).addTo(map);
 
 let latlong  = {
