@@ -431,6 +431,8 @@ setInterval(() => {
     // Button
     document.getElementById("action-button-row").style.width = "100%";
     document.getElementById("settings-button").style.flex = "1";
+    document.getElementById("info-button").style.flex = "1";
+    document.getElementById("info-button").style.textWrap = "nowrap";
   
     // Map and image section
     document.getElementById("map").style.width = "90vw";
@@ -475,6 +477,8 @@ setInterval(() => {
     // Button
     document.getElementById("action-button-row").style.width = "";
     document.getElementById("settings-button").style.flex = "";
+    document.getElementById("info-button").style.flex = "";
+    document.getElementById("info-button").style.textWrap = "";
   
     // Map and image section
     document.getElementById("map").style.width = "50vw";
