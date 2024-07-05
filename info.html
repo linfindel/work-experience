@@ -13,6 +13,12 @@
   <style>
     .card {
       width: 25rem;
+
+      backdrop-filter: blur(25px);
+    }
+
+    nav, button {
+      backdrop-filter: blur(25px);
     }
 
     @keyframes vignette {
@@ -49,7 +55,7 @@
     </div>
   </div>
 
-  <img src="" id="background-vignette" style="position: absolute; z-index: -99; width: 100vw; height: 100vh; border-radius: 0; opacity: 0.1; filter: blur(5px); animation: vignette 20s ease infinite;">
+  <img src="" id="background-vignette" style="position: absolute; z-index: -99; width: 100vw; height: 100vh; border-radius: 0; opacity: 0.25; filter: blur(5px); animation: vignette 20s ease infinite;">
 
   <script src="info.js"></script>
 </body>
